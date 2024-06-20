@@ -23,10 +23,10 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations={"classpath:ex03/config/WebConfig.xml", "classpath:ex03/config/SecurityConfig01.xml"})
+@ContextConfiguration(classes= {WebConfig.class, SecurityConfig02.class})
 @WebAppConfiguration
-public class SecurityConfig01Test {
-    private MockMvc mvc;
+public class SecurityConfig02Test {
+	private MockMvc mvc;
     private FilterChainProxy filterChainProxy;
 
     @BeforeEach
@@ -49,7 +49,7 @@ public class SecurityConfig01Test {
         SecurityFilterChain securityFilterChain = filterChainProxy.getFilterChains().get(1);
         List<Filter> filters =  securityFilterChain.getFilters();
 
-        assertEquals(16, filters.size());
+        assertEquals(11, filters.size());
 
         // All Filters
         for(Filter filter : filters) {
