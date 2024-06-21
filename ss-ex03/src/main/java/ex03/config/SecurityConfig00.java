@@ -100,7 +100,7 @@ public class SecurityConfig00 {
 		return logoutHandler;
 	}
 
-	/*** UsernamePasswordAuthenticationFilter **************/
+	/*** UsernamePasswordAuthenticationFilter 로그인**************/
 	@Bean
 	public UsernamePasswordAuthenticationFilter usernamePasswordProcessingFilter() {
 		UsernamePasswordAuthenticationFilter usernamePasswordProcessingFilter = new UsernamePasswordAuthenticationFilter();

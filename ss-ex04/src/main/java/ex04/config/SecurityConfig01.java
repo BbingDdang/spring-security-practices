@@ -26,6 +26,12 @@ public class SecurityConfig01 {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.build();
+    	// UsernamePasswordAuthenticationFilter
+    	// DefaultLoginPageGeneratingFilter
+    	// DefaultLogoutPageGeneratingFilter
+    	http
+    		.formLogin();
+    	//.loginPage("/user/login"); <- mysite에서 해야함 
+    	return http.build();
     }
 }
